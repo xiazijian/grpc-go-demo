@@ -1,13 +1,13 @@
 package main
 
 import (
-	"log"
-	"net"
+	"fmt"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
-	pb "grpc-go-demo/src/helloworld"
 	"google.golang.org/grpc/reflection"
-	"fmt"
+	pb "grpc-go-demo/src/helloworld/helloworld"
+	"log"
+	"net"
 )
 
 const (

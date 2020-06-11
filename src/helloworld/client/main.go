@@ -1,7 +1,7 @@
 package main
 
 import (
-	pb "grpc-go-demo/src/helloworld"
+	pb "grpc-go-demo/src/helloworld/helloworld"
 	"log"
 	"os"
 
@@ -30,7 +30,7 @@ func main() {
 	}
 	r, err := c.SayHello(context.Background(), &pb.HelloRequest{Name: name})
 	if err != nil {
-		log.Fatalf("could not greet: %v", err)
+		log.Fatalf("could not helloworld: %v", err)
 	}
 	log.Printf("####### get server Greeting response: %s", r.Message)
 }

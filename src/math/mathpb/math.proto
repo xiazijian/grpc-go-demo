@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+option go_package="mathpb";
+
+package math;
+
+// The math service definition.
+service Math {
+    // Sum is unary RPC.
+    rpc Sum(SumRequest) returns (SumResponse) {};
+    
+    // PrimeFactors is server-side streaming RPC
+    rpc PrimeFactors(PrimeFactorsRequest) returns (stream PrimeFactorsResponse) {};
+
+    // Average is client-side streaming RPC
+    rpc Average(stream AverageRequest) returns (AverageResponse) {};
+
+    // Maximum is bi-directional streaming RPC
+    rpc Maximum(stream MaximumRequest) returns (stream MaximumResponse) {};
+}
+
+// The request message for Sum.
+message SumRequest {
+    int32 first_num = 1;
+    int32 second_num = 2;
+}
+
+// The response message for Sum.
+message SumResponse {
+    int32 result = 1;
+}
+
+// The request message for PrimeFactors.
+message PrimeFactorsRequest {
+    int64 num = 1;
+}
+
+// The response message for PrimeFactors.
+message PrimeFactorsResponse {
+    int64 result = 1;
+}
+
+// The request message for Average.
+message AverageRequest {
+    int32 num = 1;
+}
+
+// The response message for Average.
+message AverageResponse {
+    double result = 1;
+}
+
+// The request message for Maximum.
+message MaximumRequest {
+    int32 num = 1;
+}
+
+// The response message for Maximum.
+message MaximumResponse {
+    int32 result = 1;
+}
