@@ -6,7 +6,7 @@ https://grpc.io/
 
 # 生成 *.pd.go
 
-cd src/helloworld
+cd src/helloworld  
 protoc -I ./ helloworld.proto --go_out=plugins=grpc:.
 将proto文件生成到当前目录下面。
 
